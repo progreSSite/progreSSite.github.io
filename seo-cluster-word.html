@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<html lang="ru" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кластеризация поисковых запросов онлайн — SEO инструмент для группировки ключевых слов</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Кластеризация поисковых запросов онлайн — SEO инструмент для группировки ключевых слов | Частный SEO специалист и Web-разработчик</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Кластеризация поисковых запросов онлайн — SEO инструмент для группировки ключевых слов" />
+<meta name="author" content="Данильченко Роберт" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Автоматическая кластеризация запросов по смыслу для SEO. Группируйте семантическое ядро, определяйте интенты, экспортируйте в CSV/Excel/JSON. Работает без регистрации." />
+<meta property="og:description" content="Автоматическая кластеризация запросов по смыслу для SEO. Группируйте семантическое ядро, определяйте интенты, экспортируйте в CSV/Excel/JSON. Работает без регистрации." />
+<link rel="canonical" href="http://localhost:4000/seo-cluster-word.html" />
+<meta property="og:url" content="http://localhost:4000/seo-cluster-word.html" />
+<meta property="og:site_name" content="Частный SEO специалист и Web-разработчик" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Кластеризация поисковых запросов онлайн — SEO инструмент для группировки ключевых слов" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Данильченко Роберт"},"description":"Автоматическая кластеризация запросов по смыслу для SEO. Группируйте семантическое ядро, определяйте интенты, экспортируйте в CSV/Excel/JSON. Работает без регистрации.","headline":"Кластеризация поисковых запросов онлайн — SEO инструмент для группировки ключевых слов","url":"http://localhost:4000/seo-cluster-word.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+<meta name="description" content="Автоматическая кластеризация запросов по смыслу для SEO. Группируйте семантическое ядро, определяйте интенты, экспортируйте в CSV/Excel/JSON. Работает без регистрации.">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body class="page">
+  <header class="header test" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="container header__container">
+    <div class="header__logo">
+      <a href="/" class="logo" itemprop="url">
+        <img src="/images/logo.webp" alt="Веб-разработка и SEO сопровождение">
+        <span class="logo__description">Частное seo и web-разработка</span>
+      </a>
+    </div>
+    
+    <nav class="header__nav nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+  <button class="nav__toggle" aria-label="Меню">
+    <span class="nav__toggle-line"></span>
+  </button>
+  
+  <ul class="nav__list">
+    
+    <li class="nav__item">
+      <a href="https://privseo.ru/#hero" class="nav__link" itemprop="url">Главная</a>
+    </li>
+    
+    <li class="nav__item">
+      <a href="https://privseo.ru/#about" class="nav__link" itemprop="url">Обо мне</a>
+    </li>
+    
+    <li class="nav__item">
+      <a href="https://privseo.ru/#services" class="nav__link" itemprop="url">Услуги</a>
+    </li>
+    
+    <li class="nav__item">
+      <a href="https://privseo.ru/#portfolio" class="nav__link" itemprop="url">Портфолио</a>
+    </li>
+    
+    <li class="nav__item">
+      <a href="https://privseo.ru/#reviews" class="nav__link" itemprop="url">Отзывы</a>
+    </li>
+    
+    <li class="nav__item">
+      <a href="https://privseo.ru/#contact" class="nav__link" itemprop="url">Контакты</a>
+    </li>
+    
+  </ul>
+</nav>
+    
+    <div class="header__contacts">
+      <a href="tel:+79915048150" class="contact-phone" itemprop="telephone">+7 (991) 504-81-50</a>
+      <button class="button button--callback" data-modal="callback">Заказать звонок</button>
+    </div>
+  </div>
+</header>
+      <style>
+        .container-flex {
+            display: flex;
+            gap: 30px;
+        }
+
+        .container-flex button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+            margin-bottom: 15px;
+        }
+        .container-flex button:hover {
+            background-color: #2980b9;
+        }
+        .main-content {
+            flex: 3;
+        }
+        .sidebar {
+            flex: 1;
+        }
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .cluster {
+            border: 1px solid #eee;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        .cluster-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .cluster-title {
+            font-weight: bold;
+            font-size: 18px;
+            color: #2c3e50;
+        }
+        .query-item {
+            background-color: white;
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 3px;
+            border-left: 3px solid #3498db;
+            display: flex;
+            justify-content: space-between;
+        }
+        .query-actions {
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .query-item:hover .query-actions {
+            opacity: 1;
+        }
+        .query-actions button {
+            padding: 2px 5px;
+            font-size: 12px;
+            margin-left: 5px;
+            background-color: #95a5a6;
+        }
+        .query-actions button:hover {
+            background-color: #7f8c8d;
+        }
+        .stats {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+        }
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab-button {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #7f8c8d;
+            border-bottom: 3px solid transparent;
+        }
+        .tab-button.active {
+            color: #3498db;
+            border-bottom: 3px solid #3498db;
+			background: none;
+        }
+        .drag-handle {
+            cursor: move;
+            margin-right: 10px;
+            color: #95a5a6;
+        }
+        .settings-panel {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .settings-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        select, input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .cluster-placeholder {
+            border: 2px dashed #ccc;
+            background-color: #fafafa;
+            min-height: 50px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .dragging {
+            opacity: 0.5;
+            background-color: #e3f2fd;
+        }
+        .cluster-number {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        .cluster.dragging-cluster {
+            opacity: 0.5;
+            border: 2px dashed #3498db;
+        }
+        .cluster-placeholder-cluster {
+            border: 2px dashed #3498db;
+            background-color: #e3f2fd;
+            height: 60px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+.cluster-controls button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+.container-flex{display:block}
+}
+
+    </style>
+
+    <div class="news-article">
+<header class="converter-header">
+            <h1 class="converter-title">SEO Query Clusterizer - Инструмент для кластеризации поисковых запросов</h1>
+            <p class="converter-description">Автоматическая кластеризация поисковых запросов по интенту с возможностью ручной доработки</p>
+        </header>
+<div class="converter-card article-content container">
+       <div class="container-flex"> 
+		<div class="main-content">
+<div class="tabs">
+    <button class="tab-button active" data-tab="input-tab">Ввод данных</button>
+    <button class="tab-button" data-tab="clusters-tab">Кластеры</button>
+    <button class="tab-button" data-tab="export-tab">Экспорт</button>
+</div>
+
+            <div id="input-tab" class="tab active">
+                <h2>Загрузите ваши поисковые запросы</h2>
+                <p>Вставьте список поисковых запросов (по одному на строку) или загрузите CSV/Excel файл</p>
+                
+                <textarea id="queries-input" placeholder="купить iPhone 15
+ремонт iPhone в Москве
+сколько стоит iPhone 15
+характеристики iPhone 15
+замена экрана iPhone
+сравнение iPhone 15 и Samsung S23"></textarea>
+                
+                <div>
+                    <button onclick="processQueries()">Запустить кластеризацию</button>
+                    <button onclick="loadSampleData()">Загрузить пример</button>
+                    <button onclick="clearInput()">Очистить</button>
+                </div>
+
+                <div class="settings-panel">
+                    <h3>Настройки кластеризации</h3>
+                    <div class="settings-group">
+                        <label for="algorithm">Алгоритм кластеризации:</label>
+                        <select id="algorithm">
+                            <option value="keywords">Анализ ключевых слов</option>
+                            <option value="semantic">Семантический анализ (упрощенный)</option>
+                            <option value="improved">Улучшенный алгоритм</option>
+                        </select>
+                    </div>
+                    <div class="settings-group">
+                        <label for="sensitivity">Чувствительность:</label>
+                        <input type="range" id="sensitivity" min="1" max="10" value="5">
+                        <span id="sensitivity-value">5</span>
+                    </div>
+                    <div class="settings-group">
+                        <label><input type="checkbox" id="use-stemming" checked> Использовать стемминг (основы слов)</label>
+                    </div>
+                    <div class="settings-group">
+                        <label><input type="checkbox" id="remove-stopwords" checked> Удалять стоп-слова</label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="clusters-tab" class="tab">
+                <div class="stats" id="cluster-stats">
+                    <p>Обработано запросов: <strong id="total-queries">0</strong> | Создано кластеров: <strong id="total-clusters">0</strong></p>
+                </div>
+
+                <div class="cluster-controls">
+                    <button onclick="addNewCluster()">+ Добавить кластер</button>
+                    <button onclick="mergeSelectedClusters()">Объединить выбранные</button>
+                    <button onclick="splitCluster()">Разделить кластер</button>
+                    <button onclick="recluster()">Перезапустить кластеризацию</button>
+					<button onclick="moveByKeywords()">Перенести или удалить по ключевым словам</button>
+                </div>
+
+                <div id="clusters-container">
+                    <!-- Кластеры будут добавляться здесь динамически -->
+                </div>
+
+                <div class="cluster-placeholder" id="cluster-placeholder" style="display: none;">
+                    Перетащите запросы сюда для создания нового кластера
+                </div>
+                <div class="cluster-placeholder-cluster" id="cluster-placeholder-cluster" style="display: none;">
+                    Перетащите кластер сюда для изменения порядка
+                </div>
+            </div>
+
+            <div id="export-tab" class="tab">
+                <h2>Экспорт результатов</h2>
+                <p>Выберите формат для экспорта ваших кластеризованных запросов:</p>
+                
+                <div>
+                    <button onclick="exportTo('csv')">CSV</button>
+                    <button onclick="exportTo('json')">JSON</button>
+                    <button onclick="exportTo('excel')">Excel</button>
+                </div>
+                
+                <div class="settings-panel" style="margin-top: 20px;">
+                    <h3>Настройки экспорта</h3>
+                    <div class="settings-group">
+                        <label><input type="checkbox" id="export-names" checked> Включать названия кластеров</label>
+                    </div>
+                    <div class="settings-group">
+                        <label><input type="checkbox" id="export-stats" checked> Включать статистику по кластерам</label>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <h3>Предпросмотр экспорта</h3>
+                    <textarea id="export-preview" style="min-height: 200px;" readonly></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h3>История операций</h3>
+            <div id="operations-history" style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; min-height: 200px; max-height: 300px; overflow-y: auto;">
+                <p><small>Готов к работе</small></p>
+            </div>
+
+            <h3 style="margin-top: 30px;">Быстрые действия</h3>
+            <button style="width: 100%; margin-bottom: 10px;" onclick="undoLastAction()">Отменить последнее действие</button>
+            <button style="width: 100%; margin-bottom: 10px;" onclick="saveProject()">Сохранить проект</button>
+            <button style="width: 100%; margin-bottom: 10px;" onclick="loadProject()">Загрузить проект</button>
+        </div>
+    </div></div>
+<div class="converter-info">
+    <div class="converter-info__content">
+<p><strong>Описание:</strong><br />SEO Query Clusterizer — это удобный онлайн-инструмент для автоматической группировки поисковых запросов по смысловым кластерам. Он помогает SEO-специалистам, маркетологам и владельцам сайтов структурировать семантическое ядро, выделяя группы запросов с общим интентом.</p><h2>📌 Для чего нужна кластеризация запросов?</h2><p>Кластеризация позволяет:<br />✔ <strong>Группировать запросы по темам</strong> — упрощает создание контент-плана.<br />✔ <strong>Выявлять коммерческие и информационные интенты</strong> — помогает правильно распределять страницы.<br />✔ <strong>Оптимизировать структуру сайта</strong> — один кластер = одна посадочная страница.<br />✔ <strong>Автоматизировать рутинную работу</strong> — вместо ручной сортировки вы получаете готовые группы.</p><h2>📋 Как пользоваться инструментом?</h2><p><strong>1. Загрузка запросов</strong></p><ul><li>Вставьте список запросов (по одному в строку) в поле ввода.</li><li>Или загрузите файл в формате <strong>CSV/Excel</strong>.</li><li>Можно использовать <strong>примеры запросов</strong> для тестирования.</li></ul><p><strong>2. Настройка кластеризации</strong></p><ul><li><strong>Алгоритм</strong>:<ul><li><strong>Анализ ключевых слов</strong> (группировка по общим словам).</li><li><strong>Семантический анализ</strong> (упрощенное определение интента).</li><li><strong>Улучшенный алгоритм</strong> (учитывает синонимы и стоп-слова).</li></ul></li><li><strong>Чувствительность</strong> (регулирует "строгость" группировки).</li><li><strong>Опции</strong>:<ul><li>✅ Стемминг (приведение слов к основе).</li><li>✅ Удаление стоп-слов (исключение "мусорных" слов).</li></ul></li></ul><p><strong>3. Редактирование кластеров</strong></p><p>После автоматической группировки вы можете:<br />✏ <strong>Переименовать кластер</strong> (двойной клик или кнопка "✏️").<br />🗑 <strong>Удалить кластер</strong> (если он нерелевантен).<br />➡ <strong>Перемещать запросы</strong> между кластерами (drag &amp; drop).<br />➕ <strong>Создать новый кластер</strong> вручную.<br />🔀 <strong>Объединить или разделить</strong> существующие кластеры.</p><p><strong>4. Экспорт результатов</strong></p><p>Поддерживаются форматы:</p><ul><li><strong>CSV</strong> (удобно для таблиц).</li><li><strong>Excel</strong> (каждый кластер на отдельном листе).</li><li><strong>JSON</strong> (для разработчиков и API).</li></ul><h2>🔎 Популярные вопросы</h2><p><strong>❓ Зачем нужна кластеризация запросов в SEO?</strong></p><p>Она помогает правильно распределять запросы по страницам, избегая дублей и повышая релевантность.</p><p><strong>❓ Какой алгоритм кластеризации лучше?</strong></p><ul><li>Для простых запросов — <strong>"Анализ ключевых слов"</strong>.</li><li>Для сложных случаев — <strong>"Улучшенный алгоритм"</strong> (учитывает контекст).</li></ul><p><strong>❓ Можно ли редактировать кластеры вручную?</strong></p><p>Да! Инструмент позволяет <strong>добавлять, удалять и перемещать</strong> запросы между группами.</p><p><strong>💡 Попробуйте SEO Query Clusterizer прямо сейчас — это бесплатно и не требует регистрации!</strong><br />Оптимизируйте семантическое ядро за минуты, а не часы. 🚀</p>
+</div></div>
+	</div>
+
+
+<script>
+// Автономный русский стеммер (аналог Natural.PorterStemmerRu)
+class RussianStemmer {
+  static stemWord(word) {
+    if (!word || word.length < 3) return word;
+
+    // Удаляем окончания (упрощенный алгоритм)
+    const endings = [
+      'ов', 'ев', 'ёв', 'ин', 'ын', 'ых', 'их', 'ого', 'его', 'ому', 'ему',
+      'ыми', 'ими', 'ой', 'ей', 'ий', 'ый', 'ая', 'яя', 'ое', 'ее', 'ые', 'ие',
+      'ть', 'ти', 'ей', 'ой', 'ам', 'ям', 'ем', 'им', 'ум', 'ом', 'ах', 'ях',
+      'ми', 'ли', 'и', 'ы', 'а', 'я', 'о', 'е', 'у', 'ю', 'ь', 'й'
+    ];
+
+    for (const ending of endings) {
+      if (word.endsWith(ending)) {
+        return word.slice(0, -ending.length);
+      }
+    }
+
+    return word;
+  }
+}
+
+// Делаем доступным глобально (аналог natural.PorterStemmerRu)
+window.RussianStemmer = RussianStemmer;
+</script>
+    <script>
+    // Глобальные переменные состояния приложения
+    const state = {
+        queries: [],
+        clusters: [],
+        history: [],
+        currentHistoryIndex: -1
+    };
+
+    // DOM элементы
+    const elements = {
+        queriesInput: document.getElementById('queries-input'),
+        clustersContainer: document.getElementById('clusters-container'),
+        clusterPlaceholder: document.getElementById('cluster-placeholder'),
+        clusterPlaceholderCluster: document.getElementById('cluster-placeholder-cluster'),
+        totalQueries: document.getElementById('total-queries'),
+        totalClusters: document.getElementById('total-clusters'),
+        operationsHistory: document.getElementById('operations-history'),
+        exportPreview: document.getElementById('export-preview'),
+        sensitivity: document.getElementById('sensitivity'),
+        sensitivityValue: document.getElementById('sensitivity-value'),
+        algorithm: document.getElementById('algorithm'),
+        useStemming: document.getElementById('use-stemming'),
+        removeStopwords: document.getElementById('remove-stopwords')
+    };
+
+    // Синонимы для улучшения кластеризации
+    const synonyms = {
+        'купить': ['приобрести', 'заказать', 'покупка', 'купить', 'продажа'],
+        'ремонт': ['починка', 'восстановление', 'чинить', 'ремонт', 'сервис'],
+        'цена': ['стоимость', 'ценник', 'сколько стоит', 'прайс', 'цена'],
+        'характеристики': ['описание', 'параметры', 'specs', 'функции', 'свойства'],
+        'сравнение': ['отличие', 'vs', 'versus', 'или', 'что лучше', 'разница']
+    };
+
+    // Русские стоп-слова
+    const russianStopwords = [
+        'и', 'в', 'во', 'не', 'что', 'он', 'на', 'я', 'с', 'со', 'как', 'а', 'то', 'все', 'она', 'так', 'его', 
+        'но', 'да', 'ты', 'к', 'у', 'же', 'вы', 'за', 'бы', 'по', 'только', 'ее', 'мне', 'было', 'вот', 'от', 
+        'меня', 'еще', 'нет', 'о', 'из', 'ему', 'теперь', 'когда', 'даже', 'ну', 'вдруг', 'ли', 'если', 'уже', 
+        'или', 'ни', 'быть', 'был', 'него', 'до', 'вас', 'нибудь', 'опять', 'уж', 'вам', 'ведь', 'там', 'потом', 
+        'себя', 'ничего', 'ей', 'может', 'они', 'тут', 'где', 'есть', 'надо', 'ней', 'для', 'мы', 'тебя', 'их', 
+        'чем', 'была', 'сам', 'чтоб', 'без', 'будто', 'чего', 'раз', 'тоже', 'себе', 'под', 'будет', 'ж', 'тогда', 
+        'кто', 'этот', 'того', 'потому', 'этого', 'какой', 'совсем', 'ним', 'здесь', 'этом', 'один', 'почти', 'мой', 
+        'тем', 'чтобы', 'нее', 'сейчас', 'были', 'куда', 'зачем', 'всех', 'никогда', 'можно', 'при', 'наконец', 'два', 
+        'об', 'другой', 'хоть', 'после', 'над', 'больше', 'тот', 'через', 'эти', 'нас', 'про', 'всего', 'них', 'какая', 
+        'много', 'разве', 'три', 'эту', 'моя', 'впрочем', 'хорошо', 'свою', 'этой', 'перед', 'иногда', 'лучше', 'чуть', 
+        'том', 'нельзя', 'такой', 'им', 'более', 'всегда', 'конечно', 'всю', 'между', 'это', 'кроме'
+    ];
+
+    // Инициализация приложения
+    function init() {
+        // Настройка чувствительности
+        elements.sensitivity.addEventListener('input', function() {
+            elements.sensitivityValue.textContent = this.value;
+        });
+
+        // Инициализация drag and drop
+        initDragAndDrop();
+        
+        // Настройка вкладок
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                openTab(tabId);
+            });
+        });
+    }
+
+    // Открытие вкладки
+    function openTab(tabId) {
+        // Скрываем все вкладки
+        const tabs = document.getElementsByClassName('tab');
+        for (let i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove('active');
+        }
+        
+        // Деактивируем все кнопки вкладок
+        const tabButtons = document.getElementsByClassName('tab-button');
+        for (let i = 0; i < tabButtons.length; i++) {
+            tabButtons[i].classList.remove('active');
+        }
+        
+        // Активируем выбранную вкладку и кнопку
+        document.getElementById(tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+
+    // ====================== ОСНОВНЫЕ ФУНКЦИИ ======================
+
+    // Обработка запросов и создание кластеров
+    function processQueries() {
+        const inputText = elements.queriesInput.value.trim();
+        if (!inputText) {
+            alert('Пожалуйста, введите запросы для обработки');
+            return;
+        }
+
+        // Разбиваем текст на отдельные запросы
+        state.queries = inputText.split('\n')
+            .map(q => q.trim())
+            .filter(q => q.length > 0);
+
+        // Создаем кластеры на основе выбранного алгоритма
+        const algorithm = elements.algorithm.value;
+        const sensitivity = parseInt(elements.sensitivity.value);
+        const useStemming = elements.useStemming.checked;
+        const removeStopwords = elements.removeStopwords.checked;
+
+        if (algorithm === 'keywords') {
+            clusterByKeywords(state.queries, sensitivity, useStemming, removeStopwords);
+        } else if (algorithm === 'semantic') {
+            clusterBySemantic(state.queries, sensitivity, useStemming, removeStopwords);
+        } else {
+            improvedClustering(state.queries, sensitivity, useStemming, removeStopwords);
+        }
+
+        // Отображаем результаты
+        renderClusters();
+        openTab('clusters-tab');
+        addHistory('Автоматическая кластеризация выполнена');
+    }
+
+    // Улучшенная кластеризация
+    function improvedClustering(queries, sensitivity, useStemming, removeStopwords) {
+        // Обрабатываем запросы: удаляем стоп-слова, применяем стемминг
+        const processedQueries = queries.map(query => {
+            let words = query.toLowerCase().split(/\s+/);
+            
+            if (removeStopwords) {
+                words = words.filter(word => !russianStopwords.includes(word));
+            }
+            
+            if (useStemming) {
+                words = words.map(word => RussianStemmer.stemWord(word));
+            }
+            
+            return words.join(' ');
+        });
+
+        // Создаем матрицу сходства между запросами с учетом синонимов
+        const similarityMatrix = [];
+        for (let i = 0; i < queries.length; i++) {
+            similarityMatrix[i] = [];
+            for (let j = 0; j < queries.length; j++) {
+                if (i === j) {
+                    similarityMatrix[i][j] = 1;
+                    continue;
+                }
+
+                // Вычисляем сходство с учетом синонимов
+                similarityMatrix[i][j] = calculateSimilarity(
+                    processedQueries[i], 
+                    processedQueries[j], 
+                    queries[i], 
+                    queries[j]
+                );
+            }
+        }
+
+        // Группируем запросы в кластеры на основе порога сходства
+        const threshold = sensitivity / 10;
+        const clusters = [];
+        const assigned = new Set();
+
+        for (let i = 0; i < queries.length; i++) {
+            if (assigned.has(i)) continue;
+
+            const cluster = [i];
+            assigned.add(i);
+
+            for (let j = i + 1; j < queries.length; j++) {
+                if (!assigned.has(j) && similarityMatrix[i][j] >= threshold) {
+                    cluster.push(j);
+                    assigned.add(j);
+                }
+            }
+
+            clusters.push(cluster);
+        }
+
+        // Сохраняем кластеры в состоянии
+        state.clusters = clusters.map(clusterIndices => ({
+            name: generateClusterName(clusterIndices.map(i => queries[i])),
+            queries: clusterIndices.map(i => ({
+                text: queries[i],
+                originalIndex: i
+            }))
+        }));
+
+        updateStats();
+    }
+
+    // Расчет сходства между запросами с учетом синонимов
+    function calculateSimilarity(processedQuery1, processedQuery2, originalQuery1, originalQuery2) {
+        // Простое сравнение слов
+        const words1 = processedQuery1.split(/\s+/);
+        const words2 = processedQuery2.split(/\s+/);
+        
+        const set1 = new Set(words1);
+        const set2 = new Set(words2);
+        let common = 0;
+        
+        set1.forEach(word => {
+            if (set2.has(word)) {
+                common++;
+            } else {
+                // Проверяем синонимы
+                for (const [base, syns] of Object.entries(synonyms)) {
+                    if ((word === base || syns.includes(word)) && 
+                        (set2.has(base) || syns.some(s => set2.has(s)))) {
+                        common += 0.8; // Частичное совпадение за синонимы
+                        break;
+                    }
+                }
+            }
+        });
+
+        const union = new Set([...words1, ...words2]).size;
+        let similarity = union > 0 ? common / union : 0;
+
+        // Дополнительные факторы сходства
+        const sameBrand = hasSameBrand(originalQuery1, originalQuery2);
+        if (sameBrand) similarity += 0.2;
+        
+        const sameAction = hasSameAction(originalQuery1, originalQuery2);
+        if (sameAction) similarity += 0.1;
+
+        return Math.min(similarity, 1); // Ограничиваем максимум 1
+    }
+
+    // Проверка на одинаковый бренд/товар
+    function hasSameBrand(query1, query2) {
+        const brands = ['iphone', 'samsung', 'xiaomi', 'apple', 'huawei'];
+        const brand1 = brands.find(b => query1.toLowerCase().includes(b));
+        const brand2 = brands.find(b => query2.toLowerCase().includes(b));
+        return brand1 && brand2 && brand1 === brand2;
+    }
+
+    // Проверка на одинаковое действие
+    function hasSameAction(query1, query2) {
+        const actions = {
+            'buy': ['купить', 'приобрести', 'заказать', 'цена', 'стоимость'],
+            'repair': ['ремонт', 'починка', 'замена', 'сервис'],
+            'info': ['характеристики', 'описание', 'параметры', 'обзор', 'отзывы'],
+            'compare': ['сравнение', 'vs', 'versus', 'или', 'что лучше']
+        };
+        
+        const action1 = Object.entries(actions).find(([_, words]) => 
+            words.some(w => query1.toLowerCase().includes(w)));
+        const action2 = Object.entries(actions).find(([_, words]) => 
+            words.some(w => query2.toLowerCase().includes(w)));
+            
+        return action1 && action2 && action1[0] === action2[0];
+    }
+
+    // Кластеризация по ключевым словам
+    function clusterByKeywords(queries, sensitivity, useStemming, removeStopwords) {
+        // Сначала извлекаем ключевые слова из каждого запроса
+        const queryKeywords = queries.map(query => {
+            let words = query.toLowerCase().split(/\s+/);
+            
+            if (removeStopwords) {
+                words = words.filter(word => !russianStopwords.includes(word));
+            }
+            
+            return useStemming ? words.map(stemWord) : words;
+        });
+
+        // Создаем матрицу сходства между запросами
+        const similarityMatrix = [];
+        for (let i = 0; i < queries.length; i++) {
+            similarityMatrix[i] = [];
+            for (let j = 0; j < queries.length; j++) {
+                if (i === j) {
+                    similarityMatrix[i][j] = 1;
+                    continue;
+                }
+
+                // Вычисляем сходство по количеству общих ключевых слов
+                const set1 = new Set(queryKeywords[i]);
+                const set2 = new Set(queryKeywords[j]);
+                let common = 0;
+                
+                set1.forEach(word => {
+                    if (set2.has(word)) common++;
+                });
+
+                const union = new Set([...set1, ...set2]).size;
+                similarityMatrix[i][j] = union > 0 ? common / union : 0;
+            }
+        }
+
+        // Группируем запросы в кластеры на основе порога сходства
+        const threshold = sensitivity / 10;
+        const clusters = [];
+        const assigned = new Set();
+
+        for (let i = 0; i < queries.length; i++) {
+            if (assigned.has(i)) continue;
+
+            const cluster = [i];
+            assigned.add(i);
+
+            for (let j = i + 1; j < queries.length; j++) {
+                if (!assigned.has(j) && similarityMatrix[i][j] >= threshold) {
+                    cluster.push(j);
+                    assigned.add(j);
+                }
+            }
+
+            clusters.push(cluster);
+        }
+
+        // Сохраняем кластеры в состоянии
+        state.clusters = clusters.map(clusterIndices => ({
+            name: generateClusterName(clusterIndices.map(i => queries[i])),
+            queries: clusterIndices.map(i => ({
+                text: queries[i],
+                originalIndex: i
+            }))
+        }));
+
+        updateStats();
+    }
+
+    // Упрощенная семантическая кластеризация
+    function clusterBySemantic(queries, sensitivity, useStemming, removeStopwords) {
+        // Определяем категории на основе ключевых слов
+        const categories = {
+            'купить|цена|стоимость|заказать|продажа|магазин': 'Коммерческие запросы',
+            'характеристики|описание|параметры|specs|функции': 'Информационные запросы',
+            'ремонт|замена|починка|сервис|центр|мастер': 'Ремонт и обслуживание',
+            'сравнение|отличие|vs|versus|или|что лучше': 'Сравнение товаров',
+            'отзывы|обзор|мнение|рецензия': 'Отзывы и обзоры'
+        };
+
+        const clustersMap = {};
+        const otherQueries = [];
+        
+        queries.forEach((query, index) => {
+            let matched = false;
+            let lowerQuery = query.toLowerCase();
+            
+            if (useStemming) {
+                lowerQuery = lowerQuery.split(/\s+/).map(word => stemWord(word)).join(' ');
+            }
+            
+            if (removeStopwords) {
+                lowerQuery = lowerQuery.split(/\s+/)
+                    .filter(word => !russianStopwords.includes(word))
+                    .join(' ');
+            }
+            
+            for (const keywords in categories) {
+                const regex = new RegExp(keywords);
+                if (regex.test(lowerQuery)) {
+                    const category = categories[keywords];
+                    if (!clustersMap[category]) {
+                        clustersMap[category] = [];
+                    }
+                    clustersMap[category].push({
+                        text: query,
+                        originalIndex: index
+                    });
+                    matched = true;
+                    break;
+                }
+            }
+            
+            if (!matched) {
+                otherQueries.push({
+                    text: query,
+                    originalIndex: index
+                });
+            }
+        });
+
+        // Формируем кластеры
+        state.clusters = Object.keys(clustersMap).map(name => ({
+            name,
+            queries: clustersMap[name]
+        }));
+
+        // Несгруппированные запросы добавляем в отдельный кластер
+        if (otherQueries.length > 0) {
+            state.clusters.push({
+                name: 'Другие запросы',
+                queries: otherQueries
+            });
+        }
+
+        updateStats();
+    }
+
+    // Генерация имени кластера на основе запросов в нем
+    function generateClusterName(queries) {
+        if (queries.length === 0) return 'Новый кластер';
+        
+        // Находим общие слова в запросах
+        const wordsCount = {};
+        queries.forEach(query => {
+            const words = query.toLowerCase().split(/\s+/);
+            words.forEach(word => {
+                if (word.length < 3 || russianStopwords.includes(word)) return;
+                wordsCount[word] = (wordsCount[word] || 0) + 1;
+            });
+        });
+        
+        // Сортируем слова по частоте
+        const commonWords = Object.keys(wordsCount)
+            .filter(word => wordsCount[word] > 1)
+            .sort((a, b) => wordsCount[b] - wordsCount[a]);
+        
+        return commonWords.length > 0 
+            ? commonWords.slice(0, 3).join(' ') + '...' 
+            : queries[0].split(/\s+/).slice(0, 3).join(' ') + '...';
+    }
+
+    // Упрощенный стемминг (приведение слова к основе)
+    function stemWord(word) {
+        // Используем библиотеку Natural для более качественного стемминга
+        return RussianStemmer.stemWord(word);
+    }
+
+    // ====================== РЕНДЕРИНГ И ИНТЕРФЕЙС ======================
+
+    // Отображение кластеров
+    function renderClusters() {
+        elements.clustersContainer.innerHTML = '';
+        
+        state.clusters.forEach((cluster, clusterIndex) => {
+            const clusterElement = document.createElement('div');
+            clusterElement.className = 'cluster';
+            clusterElement.dataset.clusterIndex = clusterIndex;
+            clusterElement.draggable = true;
+            
+            // Добавляем обработчики для перетаскивания кластеров
+            clusterElement.addEventListener('dragstart', handleClusterDragStart);
+            clusterElement.addEventListener('dragover', handleClusterDragOver);
+            clusterElement.addEventListener('dragleave', handleClusterDragLeave);
+            clusterElement.addEventListener('drop', handleClusterDrop);
+            clusterElement.addEventListener('dragend', handleClusterDragEnd);
+            
+            const clusterHeader = document.createElement('div');
+            clusterHeader.className = 'cluster-header';
+            
+            const titleElement = document.createElement('div');
+            titleElement.className = 'cluster-title';
+            
+            // Добавляем номер кластера
+            const clusterNumber = document.createElement('span');
+            clusterNumber.className = 'cluster-number';
+            clusterNumber.textContent = clusterIndex + 1;
+            titleElement.appendChild(clusterNumber);
+            
+            const titleText = document.createElement('span');
+            titleText.textContent = cluster.name;
+            titleText.contentEditable = true;
+            titleText.addEventListener('blur', () => {
+                renameCluster(clusterIndex, titleText.textContent);
+            });
+            titleElement.appendChild(titleText);
+            
+            const controlsElement = document.createElement('div');
+            controlsElement.innerHTML = `
+                <button onclick="renameCluster(${clusterIndex}, prompt('Новое название:', '${cluster.name.replace(/'/g, "\\'")}'))">✏️</button>
+                <button onclick="deleteCluster(${clusterIndex})">🗑️</button>
+            `;
+            
+            clusterHeader.appendChild(titleElement);
+            clusterHeader.appendChild(controlsElement);
+            clusterElement.appendChild(clusterHeader);
+            
+            // Создаем контейнер для запросов
+            const queriesContainer = document.createElement('div');
+            queriesContainer.className = 'queries-container';
+            
+            cluster.queries.forEach((query, queryIndex) => {
+                const queryElement = document.createElement('div');
+                queryElement.className = 'query-item';
+                queryElement.draggable = true;
+                queryElement.dataset.queryIndex = queryIndex;
+                queryElement.dataset.originalIndex = query.originalIndex;
+                queryElement.dataset.clusterIndex = clusterIndex;
+                
+                queryElement.innerHTML = `
+                    <span><span class="drag-handle">☰</span> ${query.text}</span>
+                    <div class="query-actions">
+                        <button onclick="moveQueryToCluster(${clusterIndex}, ${queryIndex}, prompt('Введите номер кластера:', ''))">➡️</button>
+                        <button onclick="removeQueryFromCluster(${clusterIndex}, ${queryIndex})">✖️</button>
+                    </div>
+                `;
+                
+                // Настройка drag and drop
+                queryElement.addEventListener('dragstart', handleDragStart);
+                queryElement.addEventListener('dragend', handleDragEnd);
+                queryElement.addEventListener('dragover', handleDragOver);
+                queryElement.addEventListener('dragleave', handleDragLeave);
+                queryElement.addEventListener('drop', handleDrop);
+                
+                queriesContainer.appendChild(queryElement);
+            });
+            
+            clusterElement.appendChild(queriesContainer);
+            elements.clustersContainer.appendChild(clusterElement);
+        });
+        
+        updateStats();
+    }
+
+    // Обновление статистики
+    function updateStats() {
+        const totalQueries = state.clusters.reduce((sum, cluster) => sum + cluster.queries.length, 0);
+        elements.totalQueries.textContent = totalQueries;
+        elements.totalClusters.textContent = state.clusters.length;
+        
+        // Обновляем предпросмотр экспорта
+        updateExportPreview();
+    }
+
+    // ====================== РУЧНОЕ РЕДАКТИРОВАНИЕ КЛАСТЕРОВ ======================
+
+    // Добавление нового кластера
+    function addNewCluster(name = null) {
+        if (!name) {
+            name = prompt('Введите название нового кластера:', 'Новый кластер');
+            if (!name) return;
+        }
+        
+        saveStateToHistory();
+        
+        state.clusters.push({
+            name: name,
+            queries: []
+        });
+        
+        renderClusters();
+        addHistory(`Добавлен новый кластер: "${name}"`);
+    }
+
+    // Удаление кластера
+    function deleteCluster(clusterIndex) {
+        if (clusterIndex < 0 || clusterIndex >= state.clusters.length) return;
+        
+        saveStateToHistory();
+        
+        const deletedCluster = state.clusters[clusterIndex];
+        state.clusters.splice(clusterIndex, 1);
+        
+        renderClusters();
+        addHistory(`Удален кластер: "${deletedCluster.name}"`);
+    }
+
+    // Переименование кластера
+    function renameCluster(clusterIndex, newName) {
+        if (!newName || clusterIndex < 0 || clusterIndex >= state.clusters.length) return;
+        
+        saveStateToHistory();
+        
+        const oldName = state.clusters[clusterIndex].name;
+        state.clusters[clusterIndex].name = newName;
+        
+        renderClusters();
+        addHistory(`Переименован кластер: "${oldName}" → "${newName}"`);
+    }
+
+    // Удаление запроса из кластера
+    function removeQueryFromCluster(clusterIndex, queryIndex) {
+        if (clusterIndex < 0 || clusterIndex >= state.clusters.length) return;
+        if (queryIndex < 0 || queryIndex >= state.clusters[clusterIndex].queries.length) return;
+        
+        saveStateToHistory();
+        
+        const removedQuery = state.clusters[clusterIndex].queries[queryIndex];
+        state.clusters[clusterIndex].queries.splice(queryIndex, 1);
+        
+        // Если кластер пустой, удаляем его
+        if (state.clusters[clusterIndex].queries.length === 0) {
+            state.clusters.splice(clusterIndex, 1);
+        }
+        
+        renderClusters();
+        addHistory(`Удален запрос: "${removedQuery.text}"`);
+    }
+
+    // Перемещение запроса в другой кластер
+    function moveQueryToCluster(fromClusterIndex, queryIndex, toClusterIndex) {
+        if (isNaN(toClusterIndex) || toClusterIndex < 0 || toClusterIndex >= state.clusters.length) {
+            alert('Пожалуйста, введите корректный номер кластера');
+            return;
+        }
+        
+        if (fromClusterIndex === toClusterIndex) return;
+        
+        saveStateToHistory();
+        
+        const query = state.clusters[fromClusterIndex].queries[queryIndex];
+        
+        // Удаляем запрос из исходного кластера
+        state.clusters[fromClusterIndex].queries.splice(queryIndex, 1);
+        
+        // Добавляем в целевой кластер
+        state.clusters[toClusterIndex].queries.push(query);
+        
+        // Если исходный кластер пуст, удаляем его
+        if (state.clusters[fromClusterIndex].queries.length === 0) {
+            state.clusters.splice(fromClusterIndex, 1);
+        }
+        
+        renderClusters();
+        addHistory(`Запрос "${query.text}" перемещен в кластер "${state.clusters[toClusterIndex >= state.clusters.length ? toClusterIndex - 1 : toClusterIndex].name}"`);
+    }
+
+    // Объединение выбранных кластеров
+    function mergeSelectedClusters() {
+        let message = 'Выберите кластеры для объединения:\n';
+        state.clusters.forEach((cluster, index) => {
+            message += `${index + 1}. ${cluster.name} (${cluster.queries.length} запросов)\n`;
+        });
+        
+        const indices = prompt(message + '\nВведите номера кластеров для объединения (через запятую):');
+        if (!indices) return;
+        
+        const clusterIndices = indices.split(',')
+            .map(i => parseInt(i.trim()) - 1)
+            .filter(i => i >= 0 && i < state.clusters.length)
+            .sort((a, b) => b - a); // Сортируем по убыванию для правильного удаления
+            
+        if (clusterIndices.length < 2) {
+            alert('Выберите хотя бы 2 кластера для объединения');
+            return;
+        }
+        
+        saveStateToHistory();
+        
+        // Создаем новый объединенный кластер
+        const mergedQueries = [];
+        const mergedNames = [];
+        
+        clusterIndices.forEach(i => {
+            mergedQueries.push(...state.clusters[i].queries);
+            mergedNames.push(state.clusters[i].name);
+            state.clusters.splice(i, 1);
+        });
+        
+        state.clusters.push({
+            name: `Объединенный: ${mergedNames.join(' + ')}`,
+            queries: mergedQueries
+        });
+        
+        renderClusters();
+        addHistory(`Объединены кластеры: ${mergedNames.join(', ')}`);
+    }
+
+    // Разделение кластера
+    function splitCluster() {
+        let message = 'Выберите кластер для разделения:\n';
+        state.clusters.forEach((cluster, index) => {
+            message += `${index + 1}. ${cluster.name} (${cluster.queries.length} запросов)\n`;
+        });
+        
+        const clusterIndex = prompt(message + '\nВведите номер кластера для разделения:') - 1;
+        if (clusterIndex < 0 || clusterIndex >= state.clusters.length) return;
+        
+        const keywords = prompt('Введите ключевые слова для разделения (через запятую):');
+        if (!keywords) return;
+        
+        const keywordsList = keywords.split(',').map(k => k.trim().toLowerCase());
+        
+        saveStateToHistory();
+        
+        const cluster = state.clusters[clusterIndex];
+        const matchedQueries = [];
+        const unmatchedQueries = [];
+        
+        cluster.queries.forEach(query => {
+            const lowerText = query.text.toLowerCase();
+            if (keywordsList.some(kw => lowerText.includes(kw))) {
+                matchedQueries.push(query);
+            } else {
+                unmatchedQueries.push(query);
+            }
+        });
+        
+        // Удаляем исходный кластер
+        state.clusters.splice(clusterIndex, 1);
+        
+        // Добавляем новый кластер с совпадающими запросами
+        if (matchedQueries.length > 0) {
+            state.clusters.push({
+                name: `${cluster.name} (${keywordsList.join(', ')})`,
+                queries: matchedQueries
+            });
+        }
+        
+        // Добавляем кластер с оставшимися запросами
+        if (unmatchedQueries.length > 0) {
+            state.clusters.push({
+                name: `${cluster.name} (остальные)`,
+                queries: unmatchedQueries
+            });
+        }
+        
+        renderClusters();
+        addHistory(`Кластер "${cluster.name}" разделен по ключевым словам: ${keywordsList.join(', ')}`);
+    }
+
+    // Повторная кластеризация
+    function recluster() {
+        if (state.queries.length === 0) {
+            alert('Нет запросов для кластеризации');
+            return;
+        }
+        
+        saveStateToHistory();
+        
+        // Собираем все запросы из кластеров
+        const allQueries = [];
+        state.clusters.forEach(cluster => {
+            cluster.queries.forEach(query => {
+                allQueries.push(query.text);
+            });
+        });
+        
+        state.queries = allQueries;
+        processQueries();
+        addHistory('Выполнена повторная кластеризация');
+    }
+
+    // ====================== DRAG AND DROP ======================
+
+    function initDragAndDrop() {
+        // Настройка зоны для создания новых кластеров
+        elements.clusterPlaceholder.addEventListener('dragover', handleDragOver);
+        elements.clusterPlaceholder.addEventListener('dragleave', handleDragLeave);
+        elements.clusterPlaceholder.addEventListener('drop', handleDrop);
+        
+        // Настройка зоны для перетаскивания кластеров
+        elements.clusterPlaceholderCluster.addEventListener('dragover', handleClusterDragOver);
+        elements.clusterPlaceholderCluster.addEventListener('dragleave', handleClusterDragLeave);
+        elements.clusterPlaceholderCluster.addEventListener('drop', handleClusterDrop);
+    }
+
+    let draggedItem = null;
+    let draggedCluster = null;
+    let draggedClusterIndex = -1;
+
+    // Обработчики для запросов
+    function handleDragStart(e) {
+        draggedItem = e.target.closest('.query-item');
+        e.dataTransfer.setData('text/plain', '');
+        setTimeout(() => {
+            draggedItem.classList.add('dragging');
+        }, 0);
+        
+        // Показываем placeholder для нового кластера
+        elements.clusterPlaceholder.style.display = 'block';
+    }
+
+    function handleDragEnd() {
+        if (draggedItem) {
+            draggedItem.classList.remove('dragging');
+            draggedItem = null;
+        }
+        
+        // Скрываем placeholder
+        elements.clusterPlaceholder.style.display = 'none';
+        elements.clusterPlaceholderCluster.style.display = 'none';
+    }
+
+    function handleDragOver(e) {
+        e.preventDefault();
+        if (e.target.closest('.query-item') || e.target.closest('.cluster')) {
+            e.target.closest('.query-item').style.borderLeft = '3px solid #2980b9';
+        }
+        elements.clusterPlaceholder.style.backgroundColor = '#e3f2fd';
+    }
+
+    function handleDragLeave(e) {
+        if (e.target.closest('.query-item')) {
+            e.target.closest('.query-item').style.borderLeft = '3px solid #3498db';
+        }
+        elements.clusterPlaceholder.style.backgroundColor = '#fafafa';
+    }
+
+    function handleDrop(e) {
+        e.preventDefault();
+        elements.clusterPlaceholder.style.backgroundColor = '#fafafa';
+        
+        if (!draggedItem) return;
+        
+        const fromClusterIndex = parseInt(draggedItem.dataset.clusterIndex);
+        const queryIndex = parseInt(draggedItem.dataset.queryIndex);
+        const originalIndex = parseInt(draggedItem.dataset.originalIndex);
+        const queryText = state.clusters[fromClusterIndex].queries[queryIndex].text;
+        
+        // Определяем целевой кластер
+        let toClusterIndex = -1;
+        const targetCluster = e.target.closest('.cluster');
+        const targetQuery = e.target.closest('.query-item');
+        
+        if (targetCluster) {
+            toClusterIndex = parseInt(targetCluster.dataset.clusterIndex);
+        } else if (targetQuery) {
+            toClusterIndex = parseInt(targetQuery.dataset.clusterIndex);
+        } else if (e.target.id === 'cluster-placeholder') {
+            // Создаем новый кластер
+            saveStateToHistory();
+            addNewCluster(`Новый кластер для: ${queryText.split(/\s+/).slice(0, 3).join(' ')}...`);
+            toClusterIndex = state.clusters.length - 1;
+        } else {
+            return;
+        }
+        
+        if (fromClusterIndex === toClusterIndex) {
+            // Перемещение внутри кластера
+            const query = state.clusters[fromClusterIndex].queries[queryIndex];
+            state.clusters[fromClusterIndex].queries.splice(queryIndex, 1);
+            
+            // Определяем новую позицию
+            let newPosition = state.clusters[toClusterIndex].queries.length;
+            if (targetQuery) {
+                const targetQueryIndex = parseInt(targetQuery.dataset.queryIndex);
+                newPosition = targetQueryIndex;
+                if (fromClusterIndex === toClusterIndex && queryIndex < targetQueryIndex) {
+                    newPosition--;
+                }
+            }
+            
+            state.clusters[toClusterIndex].queries.splice(newPosition, 0, query);
+            
+            renderClusters();
+            addHistory(`Запрос "${query.text}" перемещен внутри кластера "${state.clusters[toClusterIndex].name}"`);
+        } else {
+            // Перемещение между кластерами
+            saveStateToHistory();
+            moveQueryToCluster(fromClusterIndex, queryIndex, toClusterIndex);
+        }
+    }
+
+    // Обработчики для кластеров
+    function handleClusterDragStart(e) {
+        if (e.target.classList.contains('query-item') || e.target.classList.contains('query-actions')) return;
+        
+        draggedCluster = e.target.closest('.cluster');
+        draggedClusterIndex = parseInt(draggedCluster.dataset.clusterIndex);
+        e.dataTransfer.setData('text/plain', '');
+        
+        setTimeout(() => {
+            draggedCluster.classList.add('dragging-cluster');
+        }, 0);
+        
+        // Показываем placeholder для кластеров
+        elements.clusterPlaceholderCluster.style.display = 'block';
+    }
+
+    function handleClusterDragOver(e) {
+        e.preventDefault();
+        elements.clusterPlaceholderCluster.style.backgroundColor = '#e3f2fd';
+        
+        const targetCluster = e.target.closest('.cluster');
+        if (targetCluster && targetCluster !== draggedCluster) {
+            targetCluster.style.border = '2px dashed #2980b9';
+        }
+    }
+
+    function handleClusterDragLeave(e) {
+        const targetCluster = e.target.closest('.cluster');
+        if (targetCluster) {
+            targetCluster.style.border = '1px solid #eee';
+        }
+        elements.clusterPlaceholderCluster.style.backgroundColor = '#e3f2fd';
+    }
+
+    function handleClusterDrop(e) {
+        e.preventDefault();
+        elements.clusterPlaceholderCluster.style.display = 'none';
+        elements.clusterPlaceholderCluster.style.backgroundColor = '#e3f2fd';
+        
+        if (!draggedCluster) return;
+        
+        const targetCluster = e.target.closest('.cluster');
+        let targetIndex = state.clusters.length;
+        
+        if (targetCluster) {
+            targetIndex = parseInt(targetCluster.dataset.clusterIndex);
+            targetCluster.style.border = '1px solid #eee';
+        } else if (e.target.id === 'cluster-placeholder-cluster') {
+            targetIndex = state.clusters.length;
+        } else {
+            return;
+        }
+        
+        if (draggedClusterIndex === targetIndex) return;
+        
+        saveStateToHistory();
+        
+        // Перемещаем кластер
+        const movedCluster = state.clusters[draggedClusterIndex];
+        state.clusters.splice(draggedClusterIndex, 1);
+        
+        // Корректируем targetIndex, если перемещаемый кластер был перед целевой позицией
+        if (draggedClusterIndex < targetIndex) {
+            targetIndex--;
+        }
+        
+        state.clusters.splice(targetIndex, 0, movedCluster);
+        
+        renderClusters();
+        addHistory(`Кластер "${movedCluster.name}" перемещен на позицию ${targetIndex + 1}`);
+    }
+
+    function handleClusterDragEnd() {
+        if (draggedCluster) {
+            draggedCluster.classList.remove('dragging-cluster');
+            draggedCluster = null;
+            draggedClusterIndex = -1;
+        }
+        
+        // Скрываем placeholder
+        elements.clusterPlaceholderCluster.style.display = 'none';
+        
+        // Сбрасываем стили всех кластеров
+        document.querySelectorAll('.cluster').forEach(cluster => {
+            cluster.style.border = '1px solid #eee';
+        });
+    }
+
+    // ====================== ЭКСПОРТ ======================
+
+function exportTo(format) {
+    let exportData = '';
+    let mimeType = '';
+    let fileExtension = '';
+    
+    if (format === 'csv') {
+        exportData = generateCSV();
+        mimeType = 'text/csv;charset=utf-8;';
+        fileExtension = 'csv';
+    } else if (format === 'json') {
+        exportData = generateJSON();
+        mimeType = 'application/json;charset=utf-8;';
+        fileExtension = 'json';
+    } else if (format === 'excel') {
+        exportData = generateExcel();
+        mimeType = 'application/vnd.ms-excel';
+        fileExtension = 'xls';
+    }
+    
+    // Создаем BOM (Byte Order Mark) для UTF-8
+    const BOM = "\uFEFF";
+    exportData = BOM + exportData;
+    
+    // Создаем временный элемент для скачивания
+    const blob = new Blob([exportData], { type: mimeType });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `seo-clusters-${new Date().toISOString().slice(0, 10)}.${fileExtension}`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => {
+        URL.revokeObjectURL(url);
+    }, 100);
+    
+    addHistory(`Экспорт данных в формате ${format.toUpperCase()}`);
+}
+
+function generateCSV() {
+    let csv = '';
+    
+    state.clusters.forEach((cluster, index) => {
+        // Название кластера в верхнем регистре
+        csv += `"${cluster.name.toUpperCase().replace(/"/g, '""')}"\r\n`;
+        
+        // Список запросов (каждый в новой строке)
+        cluster.queries.forEach(query => {
+            csv += `"${query.text.replace(/"/g, '""')}"\r\n`;
+        });
+        
+        // Пустая строка между кластерами
+        csv += '\r\n';
+    });
+    
+    return csv;
+}
+function generateExcel() {
+    const includeNames = document.getElementById('export-names').checked;
+    const includeStats = document.getElementById('export-stats').checked;
+    
+    // Создаем XML-структуру для Excel
+    let xml = '<?xml version="1.0"?>' +
+        '<?mso-application progid="Excel.Sheet"?>' +
+        '<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"' +
+        ' xmlns:o="urn:schemas-microsoft-com:office:office"' +
+        ' xmlns:x="urn:schemas-microsoft-com:office:excel"' +
+        ' xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"' +
+        ' xmlns:html="http://www.w3.org/TR/REC-html40">' +
+        '<Styles>' +
+        '<Style ss:ID="Header"><Font ss:Bold="1"/></Style>' +
+        '<Style ss:ID="Title"><Font ss:Size="16" ss:Bold="1"/></Style>' +
+        '</Styles>';
+    
+    // Создаем лист для каждого кластера
+    state.clusters.forEach((cluster, index) => {
+        const sheetName = escapeSheetName(cluster.name);
+        
+        xml += `<Worksheet ss:Name="${sheetName}">` +
+               '<Table>';
+        
+        // Заголовок кластера
+        xml += `<Row>` +
+               `<Cell ss:StyleID="Title" ss:MergeAcross="1">` +
+               `<Data ss:Type="String">${cluster.name}</Data>` +
+               `</Cell>` +
+               `</Row>`;
+        
+        // Количество запросов (если включено)
+        if (includeStats) {
+            xml += `<Row>` +
+                   `<Cell ss:MergeAcross="1">` +
+                   `<Data ss:Type="String">Количество запросов: ${cluster.queries.length}</Data>` +
+                   `</Cell>` +
+                   `</Row>`;
+        }
+        
+        // Пустая строка
+        xml += `<Row><Cell/><Cell/></Row>`;
+        
+        // Заголовки столбцов
+        xml += `<Row>` +
+               `<Cell ss:StyleID="Header"><Data ss:Type="String">№</Data></Cell>` +
+               `<Cell ss:StyleID="Header"><Data ss:Type="String">Запрос</Data></Cell>` +
+               `</Row>`;
+        
+        // Список запросов
+        cluster.queries.forEach((query, queryIndex) => {
+            xml += `<Row>` +
+                   `<Cell><Data ss:Type="Number">${queryIndex + 1}</Data></Cell>` +
+                   `<Cell><Data ss:Type="String">${escapeXml(query.text)}</Data></Cell>` +
+                   `</Row>`;
+        });
+        
+        xml += '</Table></Worksheet>';
+    });
+    
+    xml += '</Workbook>';
+    
+    return xml;
+}
+
+function escapeSheetName(name) {
+    // Ограничение длины названия листа (31 символ в Excel)
+    let sheetName = name.substring(0, 31);
+    // Заменяем запрещенные символы
+    sheetName = sheetName.replace(/[\\/?*[\]]/g, '');
+    return sheetName || 'Лист' + (index + 1);
+}
+
+function escapeXml(unsafe) {
+    return unsafe.replace(/[<>&'"]/g, function(c) {
+        switch (c) {
+            case '<': return '&lt;';
+            case '>': return '&gt;';
+            case '&': return '&amp;';
+            case '\'': return '&apos;';
+            case '"': return '&quot;';
+        }
+    });
+}
+
+// Функция для корректного форматирования названий листов
+function escapeSheetName(name) {
+    // Ограничиваем длину названия (Excel допускает максимум 31 символ)
+    let sheetName = name.substring(0, 31);
+    
+    // Заменяем запрещенные символы
+    sheetName = sheetName.replace(/[\\/?*[\]]/g, '');
+    
+    // Удаляем начальные/конечные кавычки
+    sheetName = sheetName.replace(/^'+|'+$/g, '');
+    
+    return sheetName || 'Лист' + (index + 1);
+}
+function generateJSON() {
+    const includeNames = document.getElementById('export-names').checked;
+    const includeStats = document.getElementById('export-stats').checked;
+    
+    const result = {
+        meta: {
+            generatedAt: new Date().toISOString(),
+            totalClusters: state.clusters.length,
+            totalQueries: state.clusters.reduce((sum, c) => sum + c.queries.length, 0)
+        },
+        clusters: state.clusters.map((cluster, index) => {
+            const clusterData = { number: index + 1 };
+            if (includeNames) {
+                clusterData.name = cluster.name;
+            }
+            if (includeStats) {
+                clusterData.count = cluster.queries.length;
+            }
+            clusterData.queries = cluster.queries.map(q => q.text);
+            return clusterData;
+        })
+    };
+    
+    return JSON.stringify(result, null, 2);
+}
+
+function updateExportPreview() {
+    const exportPreview = document.getElementById('export-preview');
+    exportPreview.value = generateCSV();
+}
+    // ====================== ИСТОРИЯ И СОХРАНЕНИЕ ======================
+
+    function addHistory(message) {
+        const now = new Date();
+        const timeStr = now.toTimeString().substring(0, 8);
+        const entry = document.createElement('p');
+        entry.innerHTML = `<small>${timeStr} - ${message}</small>`;
+        elements.operationsHistory.insertBefore(entry, elements.operationsHistory.firstChild);
+        
+        // Ограничиваем количество записей в истории
+        if (elements.operationsHistory.children.length > 50) {
+            elements.operationsHistory.removeChild(elements.operationsHistory.lastChild);
+        }
+        
+        // Добавляем в историю состояний
+        state.history.push(JSON.stringify({
+            queries: state.queries,
+            clusters: state.clusters
+        }));
+        
+        state.currentHistoryIndex = state.history.length - 1;
+    }
+
+    function saveStateToHistory() {
+        state.history.push(JSON.stringify({
+            queries: state.queries,
+            clusters: JSON.parse(JSON.stringify(state.clusters)) // Глубокое копирование
+        }));
+        
+        state.currentHistoryIndex = state.history.length - 1;
+        
+        // Ограничиваем размер истории
+        if (state.history.length > 20) {
+            state.history.shift();
+            state.currentHistoryIndex--;
+        }
+    }
+
+    function undoLastAction() {
+        if (state.currentHistoryIndex <= 0) {
+            alert('Нет действий для отмены');
+            return;
+        }
+        
+        state.currentHistoryIndex--;
+        const previousState = JSON.parse(state.history[state.currentHistoryIndex]);
+        
+        state.queries = previousState.queries;
+        state.clusters = previousState.clusters;
+        
+        renderClusters();
+        addHistory('Отменено последнее действие');
+    }
+
+    function saveProject() {
+        const projectData = {
+            queries: state.queries,
+            clusters: state.clusters,
+            settings: {
+                algorithm: elements.algorithm.value,
+                sensitivity: elements.sensitivity.value,
+                useStemming: elements.useStemming.checked,
+                removeStopwords: elements.removeStopwords.checked
+            }
+        };
+        
+        const dataStr = JSON.stringify(projectData);
+        const blob = new Blob([dataStr], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `seo-cluster-project-${new Date().toISOString().slice(0, 10)}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        addHistory('Проект сохранен');
+    }
+
+    function loadProject() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.json';
+        
+        input.onchange = e => {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = event => {
+                try {
+                    const projectData = JSON.parse(event.target.result);
+                    
+                    state.queries = projectData.queries || [];
+                    state.clusters = projectData.clusters || [];
+                    
+                    // Восстанавливаем настройки
+                    if (projectData.settings) {
+                        elements.algorithm.value = projectData.settings.algorithm || 'keywords';
+                        elements.sensitivity.value = projectData.settings.sensitivity || 5;
+                        elements.sensitivityValue.textContent = elements.sensitivity.value;
+                        elements.useStemming.checked = !!projectData.settings.useStemming;
+                        elements.removeStopwords.checked = !!projectData.settings.removeStopwords;
+                    }
+                    
+                    renderClusters();
+                    addHistory(`Проект "${file.name}" загружен`);
+                } catch (err) {
+                    alert('Ошибка при загрузке файла: ' + err.message);
+                }
+            };
+            reader.readAsText(file);
+        };
+        
+        input.click();
+    }
+
+// Перенос запросов по ключевым словам (логическое И)
+// Улучшенная функция для переноса или удаления запросов по ключевым словам
+function moveByKeywords() {
+    if (state.clusters.length === 0) {
+        alert('Нет кластеров для работы');
+        return;
+    }
+
+    // Шаг 1: Выбор ключевых слов
+    const keywordsInput = prompt(
+        'Введите ключевые слова (через запятую).\n' +
+        'Запросы должны содержать ВСЕ указанные слова:\n\n' +
+        'Пример: мачта, алюминиевая\n\n' +
+        'P.S. Для удаления укажите "0" в номере кластера',
+        ''
+    );
+    if (!keywordsInput) return;
+
+    // Шаг 2: Выбор действия (перенос или удаление)
+    const clusterNumber = prompt(
+        `Введите:\n` +
+        `• Номер кластера (1-${state.clusters.length}) для переноса\n` +
+        `• Или "0" для удаления запросов\n\n` +
+        `Текущие кластеры:\n${state.clusters.map((c, i) => `  ${i+1}. ${c.name}`).join('\n')}`,
+        ''
+    );
+    if (clusterNumber === null) return;
+
+    const isDeletionMode = clusterNumber === '0';
+    let targetClusterIndex = parseInt(clusterNumber) - 1;
+
+    // Валидация для переноса
+    if (!isDeletionMode && (isNaN(targetClusterIndex) || targetClusterIndex < 0 || targetClusterIndex >= state.clusters.length)) {
+        alert('Некорректный номер кластера');
+        return;
+    }
+
+    // Подготовка ключевых слов
+    const keywords = keywordsInput.split(',')
+        .map(word => word.trim().toLowerCase())
+        .filter(word => word.length > 0);
+
+    if (keywords.length === 0) {
+        alert('Не указаны ключевые слова');
+        return;
+    }
+
+    // Обработка запросов
+    saveStateToHistory();
+    let processedCount = 0;
+
+    state.clusters.forEach((cluster, clusterIndex) => {
+        // Пропускаем целевой кластер при переносе
+        if (!isDeletionMode && clusterIndex === targetClusterIndex) return;
+
+        cluster.queries = cluster.queries.filter(query => {
+            const queryText = query.text.toLowerCase();
+            const isMatch = keywords.every(keyword => queryText.includes(keyword));
+
+            if (isMatch) {
+                processedCount++;
+                // Перенос в целевой кластер или удаление
+                if (!isDeletionMode) {
+                    state.clusters[targetClusterIndex].queries.push(query);
+                }
+                return false; // Удаляем из текущего кластера
+            }
+            return true; // Оставляем в текущем кластере
+        });
+    });
+
+    // Удаляем пустые кластеры
+    state.clusters = state.clusters.filter(cluster => cluster.queries.length > 0);
+
+    // Логирование
+    renderClusters();
+    if (isDeletionMode) {
+        addHistory(`Удалено ${processedCount} запросов по ключам: ${keywords.join(' + ')}`);
+    } else {
+        addHistory(`Перенесено ${processedCount} запросов в кластер "${state.clusters[targetClusterIndex].name}" по ключам: ${keywords.join(' + ')}`);
+    }
+}    // ====================== ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ======================
+
+    function loadSampleData() {
+        elements.queriesInput.value = `купить iPhone 15
+ремонт iPhone в Москве
+сколько стоит iPhone 15 Pro Max
+характеристики iPhone 15
+замена экрана iPhone 14
+сравнение iPhone 15 и Samsung S23
+лучшие чехлы для iPhone 15
+отзывы о iPhone 15
+где купить iPhone дешево
+официальный магазин Apple
+iPhone 15 обзор
+цена iPhone 15 в долларах
+сервисный центр Apple Москва
+какой iPhone лучше купить
+продажа iPhone б/у
+iPhone 15 vs Xiaomi 13
+аксессуары для iPhone 15
+гарантия на iPhone
+восстановление данных iPhone
+как выбрать iPhone`;
+        
+        addHistory('Загружены примеры запросов');
+    }
+
+    function clearInput() {
+        elements.queriesInput.value = '';
+        addHistory('Очищено поле ввода');
+    }
+
+    // Инициализация при загрузке страницы
+    window.onload = init;
+    </script>
+  <footer class="footer">
+  <div class="container footer__container">
+    <div class="footer__col">
+      <div class="footer__logo">
+        <a href="/" class="logo">
+          <img src="/images/logo-footer.webp" alt="Веб-разработка и SEO сопровождение">
+          <span class="logo__description">Веб-разработка и SEO</span>
+        </a>
+      </div>
+      <div class="footer__copyright">
+        © 2025 Данильченко Роберт — Веб-разработка и SEO сопровождение
+      </div>
+    </div>
+    
+    <div class="footer__col">
+      <nav class="footer__nav">
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item">
+            <a href="#hero" class="footer__nav-link">Главная</a>
+          </li>
+          <li class="footer__nav-item">
+            <a href="#about" class="footer__nav-link">Обо мне</a>
+          </li>
+          <li class="footer__nav-item">
+            <a href="#services" class="footer__nav-link">Услуги</a>
+          </li>
+          <li class="footer__nav-item">
+            <a href="#portfolio" class="footer__nav-link">Портфолио</a>
+          </li>
+          <li class="footer__nav-item">
+            <a href="#contact" class="footer__nav-link">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    
+    <div class="footer__col">
+      <div class="footer__social">
+        
+          <a href="https://t.me/robDaNilov" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Telegram" itemprop="url">
+            <img class="social-link__icon" src="/images/telegram.webp" alt="telegram">
+          </a>
+        
+          <a href="https://wa.me/79607918623" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" itemprop="url">
+            <img class="social-link__icon" src="/images/whatsapp.webp" alt="whatsapp">
+          </a>
+        
+          <a href="https://teams.microsoft.com/l/chat/0/0?users=DanilovRob@ya.ru" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Microsoft Teams" itemprop="url">
+            <img class="social-link__icon" src="/images/microsoft.webp" alt="microsoft teams">
+          </a>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="consultation-modal">
+  <div class="modal__content">
+    <button class="modal__close">&times;</button>
+    <h3 class="modal__title">Получить консультацию</h3>
+    <form class="form" id="consultation-form">
+      <input type="hidden" name="form_type" value="Консультация">
+      
+      <div class="form__group">
+        <input type="text" class="form__input" name="name" required placeholder=" ">
+        <label class="form__label">Ваше имя</label>
+      </div>
+      
+      <div class="form__group">
+        <input type="tel" class="form__input" name="phone" required placeholder=" ">
+        <label class="form__label">Телефон</label>
+      </div>
+      
+      <button type="submit" class="button button--primary">Отправить</button>
+    </form>
+  </div>
+</div>
+<div class="modal" id="callback-modal">
+  <div class="modal__content">
+    <button class="modal__close" aria-label="Закрыть модальное окно">&times;</button>
+    <h3 class="modal__title">Заказать звонок</h3>
+    <form class="form" id="callback-form" method="post">
+      <div class="form__group">
+        <input type="text" class="form__input" id="callback-name" name="name" required placeholder=" ">
+        <label for="callback-name" class="form__label">Ваше имя</label>
+      </div>
+      
+      <div class="form__group">
+        <input type="tel" class="form__input" id="callback-phone" name="phone" required placeholder=" ">
+        <label for="callback-phone" class="form__label">Телефон</label>
+      </div>
+      
+      <input type="hidden" name="form_type" value="callback">
+      <button type="submit" class="button button--primary form__button">Заказать звонок</button>
+    </form>
+  </div>
+</div>
+	<!-- Подключение скриптов -->
+	<script src="/js/main.js"></script>
+	<script src="/js/slider.js"></script>
+	<script src="/js/modal.js"></script>
+	<script src="/js/form.js"></script>
+	<script src="/js/send-telegram.js" defer></script>
+	<script>
+		window.addEventListener('load', function() {
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();
+			k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+			ym(102896834, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:false  // Вебвизор отключён
+			});
+		});
+	</script>
+	<noscript><div></div></noscript>
+</body>
+</html>

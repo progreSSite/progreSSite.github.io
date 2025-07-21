@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="ru" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Онлайн сервис для SEO анализа конкурентов, в сравнении со своим проектом</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Онлайн сервис для SEO анализа конкурентов, в сравнении со своим проектом | Частный SEO специалист и Web-разработчик</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Онлайн сервис для SEO анализа конкурентов, в сравнении со своим проектом" />
+<meta name="author" content="Данильченко Роберт" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Сравните свою страницу со страницами конкурентов по определенному поисковому запросу, с помощью онлайн сервиса для анализа основных seo параметров страниц" />
+<meta property="og:description" content="Сравните свою страницу со страницами конкурентов по определенному поисковому запросу, с помощью онлайн сервиса для анализа основных seo параметров страниц" />
+<link rel="canonical" href="http://localhost:4000/seo-parse.html" />
+<meta property="og:url" content="http://localhost:4000/seo-parse.html" />
+<meta property="og:site_name" content="Частный SEO специалист и Web-разработчик" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Онлайн сервис для SEO анализа конкурентов, в сравнении со своим проектом" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Данильченко Роберт"},"description":"Сравните свою страницу со страницами конкурентов по определенному поисковому запросу, с помощью онлайн сервиса для анализа основных seo параметров страниц","headline":"Онлайн сервис для SEO анализа конкурентов, в сравнении со своим проектом","url":"http://localhost:4000/seo-parse.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+<meta name="description" content="Сравните свою страницу со страницами конкурентов по определенному поисковому запросу, с помощью онлайн сервиса для анализа основных seo параметров страниц">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body class="page">
+  <header class="header test" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="container header__container">
+    <div class="header__logo">
+      <a href="/" class="logo" itemprop="url">
+        <img src="/images/logo.webp" alt="Веб-разработка и SEO сопровождение">
+        <span class="logo__description">Частное seo и web-разработка</span>
+      </a>
+    </div>
+    
+    <nav class="header__nav nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
+  <button class="nav__toggle" aria-label="Меню">
+    <span class="nav__toggle-line"></span>
+  </button>
+  
+  <ul class="nav__list">
+    
+    <li class="nav__item">
+      <a href="https://privseo.ru/#hero" class="nav__link" itemprop="url">Главная</a>
+    </li>
+    
+    <li class="nav__item">
+      <a href="https://privseo.ru/#about" class="nav__link" itemprop="url">Обо мне</a>
+    </li>
+    
+    <li class="nav__item">
+      <a href="https://privseo.ru/#services" class="nav__link" itemprop="url">Услуги</a>
+    </li>
+    
+    <li class="nav__item">
+      <a href="https://privseo.ru/#portfolio" class="nav__link" itemprop="url">Портфолио</a>
+    </li>
+    
+    <li class="nav__item">
+      <a href="https://privseo.ru/#reviews" class="nav__link" itemprop="url">Отзывы</a>
+    </li>
+    
+    <li class="nav__item">
+      <a href="https://privseo.ru/#contact" class="nav__link" itemprop="url">Контакты</a>
+    </li>
+    
+  </ul>
+</nav>
+    
+    <div class="header__contacts">
+      <a href="tel:+79915048150" class="contact-phone" itemprop="telephone">+7 (991) 504-81-50</a>
+      <button class="button button--callback" data-modal="callback">Заказать звонок</button>
+    </div>
+  </div>
+</header>
+  <style>
+    /* Дополнительные стили для анализатора */
+    .seo-analysis {
+      margin-top: 4rem;
+      background-color: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      padding: 2rem;
+    }
+	
+	.seo-analysis .form__input:not(:focus) + .form__label {display:none}
+    
+    .results-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .result-card {
+      background-color: white;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+      border-left: 4px solid var(--primary-color);
+      transition: var(--transition);
+    }
+    
+    .result-card.error {
+      border-left-color: var(--danger-color);
+      background-color: rgba(239, 35, 60, 0.05);
+    }
+    
+    .result-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .result-url {
+      font-weight: 600;
+      color: var(--dark-color);
+      word-break: break-all;
+    }
+    
+    .result-status {
+      padding: 0.3rem 0.8rem;
+      border-radius: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      background-color: var(--light-color);
+      color: var(--gray-dark);
+    }
+    
+    .result-status.error {
+      background-color: rgba(239, 35, 60, 0.1);
+      color: var(--danger-color);
+    }
+    
+    .result-meta {
+		margin-bottom: 1rem;
+		display: flex;
+		gap: 20px;
+		justify-content: space-between;
+    }
+    
+    .meta-item {
+      font-size: 1.4rem;
+    }
+    
+    .meta-label {
+      color: var(--gray-dark);
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 1.2rem;
+    }
+    
+    .meta-value {
+      font-weight: 500;
+      color: var(--dark-color);
+    }
+    
+    .keyword-stats {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    .keyword-stat {
+      padding: 0.3rem 0.8rem;
+      border-radius: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    
+    .keyword-exact {
+      background-color: rgba(67, 97, 238, 0.1);
+      color: var(--primary-color);
+    }
+    
+    .keyword-partial {
+      background-color: rgba(114, 9, 183, 0.1);
+      color: var(--secondary-color);
+    }
+    
+    .details-toggle {
+      color: var(--primary-color);
+      cursor: pointer;
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
+      display: inline-block;
+    }
+    
+    .details-content {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: var(--light-color);
+      border-radius: var(--border-radius);
+    }
+    
+    .tag {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background-color: rgba(67, 97, 238, 0.1);
+      color: var(--primary-color);
+      border-radius: 1rem;
+      font-size: 1.2rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      display: none;
+    }
+    
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid var(--gray-light);
+      border-top-color: var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 2rem;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .comparison-chart {
+      margin-top: 3rem;
+      background-color: white;
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+    
+    .chart-container {
+      height: 400px;
+      margin-top: 2rem;
+    }
+    
+    .error-message {
+      color: var(--danger-color);
+      background-color: rgba(239, 35, 60, 0.1);
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      margin-top: 1rem;
+    }
+    
+    .success-message {
+      color: var(--success-color);
+      background-color: rgba(76, 201, 240, 0.1);
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      margin-top: 1rem;
+    }
+
+    /* Стили для новых метрик */
+    .seo-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .metric-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      border-left: 3px solid #4361ee;
+    }
+
+    .metric-title {
+      font-size: 1.4rem;
+      color: #495057;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .metric-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #14213d;
+    }
+
+    .metric-good { color: #4cc9f0; }
+    .metric-warning { color: #f8961e; }
+    .metric-bad { color: #ef233c; }
+
+    .metric-icon {
+      width: 20px;
+      height: 20px;
+      stroke-width: 2;
+    }
+    
+    @media (max-width: 768px) {
+      .result-meta {
+        flex-flow: column;
+      }
+      
+      .seo-analysis {
+        padding: 1.5rem;
+      }
+
+      .seo-metrics {
+        grid-template-columns: 1fr;
+      }
+    }
+</style>
+
+<section class="hero" id="hero">
+<div id="app" class="container">
+  <h1>SEO Анализатор страниц</h1>
+  <p>Введите URL страниц для анализа (каждый URL с новой строки) и ключевую фразу для проверки</p>
+  
+  <form id="urlForm" class="seo-analysis">
+    <div class="form__group">
+      <textarea name="urls" id="urls" placeholder="Введите URL каждой страницы с новой строки" 
+                class="form__input" rows="5" required></textarea>
+      <label for="urls" class="form__label">URL страниц</label>
+    </div>
+    
+    <div class="form__group">
+      <input type="text" name="keyword" id="keyword" placeholder="Ключевая фраза (необязательно)" 
+             class="form__input">
+      <label for="keyword" class="form__label">Ключевая фраза</label>
+    </div>
+    
+    <button type="submit" class="button button--primary">Анализировать</button>
+    
+    <div id="formMessage" style="display: none;"></div>
+  </form>
+  
+  <div id="results" class="seo-analysis" style="display: none;">
+    <h2>Результаты анализа</h2>
+    <div id="resultsContent" class="results-container"></div>
+  </div>
+</div>
+
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="spinner"></div>
+  <p>Идет анализ страниц, пожалуйста подождите...</p>
+  <p id="progressText">Обрабатывается: 0 из 0</p>
+</div>
+</section>
+<div class="converter-info">
+    <div class="converter-info__content">
+<h2>Что это за сервис?</h2><p>Это онлайн-инструмент для <strong>SEO-анализа</strong> веб-страниц. С его помощью вы можете:<br />✅ Сравнить свою страницу с конкурентами по ключевым SEO-параметрам<br />✅ Проверить, насколько хорошо оптимизирован контент под нужные запросы<br />✅ Узнать технические показатели страницы (заголовки, мета-описания, скорость загрузки и др.)<br />✅ Найти слабые места в SEO конкурентов и улучшить свой сайт</p><h2> Как это работает?</h2><ol><li><strong>Введите URL страниц</strong> (свой и конкурентов) — каждый с новой строки.</li><li><strong>Укажите ключевую фразу</strong> (если нужно проверить её вхождение в текст).</li><li>Нажмите <strong>"Анализировать"</strong> и получите детальный отчет.</li></ol><h2>Что можно проанализировать?</h2><p>Основные SEO-параметры:<br />✔ Title (заголовок страницы)<br />✔ Description (мета-описание)<br />✔ H1, H2 (заголовки контента)<br />✔ Alt-атрибуты изображений</p><p>Анализ URL:<br />✔ Длина и читаемость адреса<br />✔ Наличие динамических параметров (?id=123)<br />✔ Содержит ли URL ключевую фразу</p><p>Контент и ключевые слова:<br />✔ Объем текста (в символах)<br />✔ Соотношение текста и HTML-кода<br />✔ Количество точных и частичных вхождений ключевой фразы</p><p>Технические показатели:<br />✔ Время загрузки страницы<br />✔ HTTP-статус (доступность страницы)</p><p>Сравнение с конкурентами (графики):<br />✔ Наглядные диаграммы по ключевым словам и длине контента</p><h2>Кому пригодится?</h2><p>👉 <strong>Владельцам сайтов</strong> — чтобы проверить, насколько хорошо страница оптимизирована.<br />👉 <strong>SEO-специалистам</strong> — для анализа конкурентов и поиска идей для улучшений.<br />👉 <strong>Копирайтерам</strong> — чтобы проверить плотность ключевых слов и структуру текста.<br />👉 <strong>Маркетологам</strong> — для оценки эффективности контента.</p><h2>Как использовать результаты?</h2><p>🔸 <strong>Если у конкурентов лучше показатели</strong> — изучите их заголовки, описания и структуру текста.<br />🔸 <strong>Если ключевая фраза встречается редко</strong> — доработайте контент.<br />🔸 <strong>Если URL слишком длинный или динамический</strong> — упростите его.<br />🔸 <strong>Если страница грузится медленно</strong> — проверьте изображения и код.</p><h2>Начните анализ прямо сейчас!</h2><p>Просто введите URL, нажмите кнопку — и получите <strong>полный SEO-анализ</strong> за несколько секунд.</p><p>📢 <strong>Важно:</strong> Сервис не сохраняет ваши данные, анализ происходит в реальном времени.</p><p>💡 <strong>Совет:</strong> Чтобы получить больше полезной информации, сравнивайте <strong>3-5 страниц конкурентов</strong> со своей. Это поможет выявить лучшие практики в вашей нише.</p><p><strong>Готовы проверить свой сайт?</strong> → <strong>Вводите URL и жмите "Анализировать"!</strong> 🚀</p>
+	</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  document.getElementById('urlForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const urlsInput = e.target.urls.value;
+    const keyword = e.target.keyword.value;
+    
+    // Проверка на пустые URL
+    const urls = urlsInput.split('\n')
+      .map(url => url.trim())
+      .filter(url => url !== '');
+    
+    if (urls.length === 0) {
+      showMessage('Пожалуйста, введите хотя бы один URL', 'error');
+      return;
+    }
+    
+    // Валидация URL
+    const invalidUrls = urls.filter(url => {
+      try {
+        new URL(url.startsWith('http') ? url : `https://${url}`);
+        return false;
+      } catch {
+        return true;
+      }
+    });
+    
+    if (invalidUrls.length > 0) {
+      showMessage(`Некорректные URL: ${invalidUrls.join(', ')}`, 'error');
+      return;
+    }
+    
+    // Показываем прелоадер
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const progressText = document.getElementById('progressText');
+    loadingOverlay.style.display = 'flex';
+    progressText.textContent = `Обрабатывается: 0 из ${urls.length}`;
+    
+    try {
+      // Отправляем данные на сервер
+      const response = await fetch('https://seoparse.netlify.app/.netlify/functions/hello', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ urls, keyword })
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Ошибка сервера: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      
+      // Скрываем прелоадер
+      loadingOverlay.style.display = 'none';
+      
+      // Показываем результаты
+      displayResults(data, keyword);
+      
+    } catch (error) {
+      loadingOverlay.style.display = 'none';
+      showMessage(`Ошибка при анализе: ${error.message}`, 'error');
+      console.error('Ошибка:', error);
+    }
+  });
+  
+  function showMessage(text, type) {
+    const messageEl = document.getElementById('formMessage');
+    messageEl.textContent = text;
+    messageEl.className = type === 'error' ? 'error-message' : 'success-message';
+    messageEl.style.display = 'block';
+    
+    setTimeout(() => {
+      messageEl.style.display = 'none';
+    }, 5000);
+  }
+  
+  function displayResults(data, keyword) {
+    const resultsContainer = document.getElementById('results');
+    const resultsContent = document.getElementById('resultsContent');
+    
+    resultsContainer.style.display = 'block';
+    resultsContent.innerHTML = '';
+    
+    if (!Array.isArray(data)) {
+      resultsContent.innerHTML = `<div class="error-message">Ошибка: получены некорректные данные</div>`;
+      return;
+    }
+    
+    data.forEach((item, index) => {
+      const isError = item.error || item.status >= 400;
+      
+      const resultCard = document.createElement('div');
+      resultCard.className = `result-card ${isError ? 'error' : ''}`;
+      
+      resultCard.innerHTML = `
+        <div class="result-header">
+          <div class="result-url">${item.url}</div>
+          <div class="result-status ${isError ? 'error' : ''}">${isError ? 'Ошибка' : `Статус: ${item.status}`}</div>
+        </div>
+        
+        ${isError ? `
+          <div class="error-message">${item.error || 'Ошибка при анализе страницы'}</div>
+        ` : `
+          <div class="seo-metrics">
+            <div class="metric-card">
+              <div class="metric-title">
+                <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+                URL Анализ
+              </div>
+              <div class="metric-value ${item.urlAnalysis.length > 60 ? 'metric-bad' : 'metric-good'}">
+                ${item.urlAnalysis.length} симв.
+              </div>
+              <div style="margin-top: 0.5rem; font-size: 1.3rem; color: #495057;">
+                ${item.urlAnalysis.isDynamic ? '❌ Динамический' : '✅ ЧПУ'}
+                ${item.urlAnalysis.hasKeyword ? '· ✅ Ключ. слово' : ''}
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-title">
+                <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Скорость
+              </div>
+              <div class="metric-value ${item.loadTime > 2000 ? 'metric-bad' : item.loadTime > 1000 ? 'metric-warning' : 'metric-good'}">
+                ${item.loadTime} мс
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-title">
+                <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                Контент
+              </div>
+              <div class="metric-value ${item.contentAnalysis.length < 1500 ? 'metric-bad' : item.contentAnalysis.length < 2500 ? 'metric-warning' : 'metric-good'}">
+                ${item.contentAnalysis.length} симв.
+              </div>
+              <div style="margin-top: 0.5rem; font-size: 1.3rem; color: #495057;">
+                ${Math.round(item.contentAnalysis.textToCodeRatio)}% текста
+              </div>
+            </div>
+          </div>
+
+          <div class="result-meta">
+            <div class="meta-item">
+              <span class="meta-label">Title</span>
+              <span class="meta-value" title="${item.title}">${truncate(item.title, 50)}</span>
+            </div>
+            
+            <div class="meta-item">
+              <span class="meta-label">H1</span>
+              <span class="meta-value" title="${item.h1}">${truncate(item.h1, 30)}</span>
+            </div>
+            
+            <div class="meta-item">
+              <span class="meta-label">Description</span>
+              <span class="meta-value" title="${item.description}">${truncate(item.description, 50)}</span>
+            </div>
+            
+            ${keyword ? `
+              <div class="meta-item">
+                <span class="meta-label">Ключевая фраза</span>
+                <div>
+                  <span class="meta-value">${item.keywordStats.exactCount + item.keywordStats.partialCount} вхождений</span>
+                  <div class="keyword-stats">
+                    <span class="keyword-stat keyword-exact" title="Точные вхождения">${item.keywordStats.exactCount}</span>
+                    <span class="keyword-stat keyword-partial" title="Неточные вхождения">${item.keywordStats.partialCount}</span>
+                  </div>
+                </div>
+              </div>
+            ` : ''}
+          </div>
+          
+          <a href="#" class="details-toggle" data-index="${index}">▼ Подробнее</a>
+          <div class="details-content" id="details-${index}">
+            <div class="meta-item">
+              <span class="meta-label">H2 заголовки (${item.h2.length})</span>
+              ${item.h2.length > 0 ? `
+                <ul style="margin-top: 0.5rem;">
+                  ${item.h2.map(h2 => `<li style="margin-bottom: 0.5rem;">${h2}</li>`).join('')}
+                </ul>
+              ` : '<span class="meta-value">Отсутствуют</span>'}
+            </div>
+            
+            <div class="meta-item">
+              <span class="meta-label">Alt тексты (${item.alts.filter(alt => alt).length})</span>
+              ${item.alts.filter(alt => alt).length > 0 ? `
+                <div style="margin-top: 0.5rem;">
+                  ${item.alts.filter(alt => alt).map(alt => `<span class="tag" title="${alt}">${truncate(alt, 20)}</span>`).join('')}
+                </div>
+              ` : '<span class="meta-value">Отсутствуют</span>'}
+            </div>
+          </div>
+        `}
+      `;
+      
+      resultsContent.appendChild(resultCard);
+      
+      // Добавляем обработчик для раскрытия деталей
+      const toggle = resultCard.querySelector('.details-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          const details = resultCard.querySelector('.details-content');
+          
+          if (details.style.display === 'block') {
+            details.style.display = 'none';
+            this.textContent = '▼ Подробнее';
+          } else {
+            details.style.display = 'block';
+            this.textContent = '▲ Скрыть';
+          }
+        });
+      }
+    });
+    
+    // Добавляем графики сравнения, если есть ключевая фраза и более одной страницы
+    if (keyword && data.length > 1 && data.every(item => !item.error)) {
+      const chartsHTML = createComparisonCharts(data, keyword);
+      resultsContent.insertAdjacentHTML('beforeend', chartsHTML);
+    }
+  }
+  
+  function truncate(text, maxLength) {
+    if (!text) return '-';
+    return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+  }
+  
+  function createComparisonCharts(data, keyword) {
+    const validData = data.filter(item => !item.error);
+    
+    let html = `
+      <div class="comparison-chart">
+        <h3>Сравнительный анализ по ключевой фразе: "${keyword}"</h3>
+        <div class="chart-container">
+          <canvas id="keywordChart"></canvas>
+        </div>
+      </div>
+      
+      <div class="comparison-chart">
+        <h3>Сравнение длины контента</h3>
+        <div class="chart-container">
+          <canvas id="contentChart"></canvas>
+        </div>
+      </div>
+    `;
+    
+    // Откладываем создание графиков до отрисовки HTML
+    setTimeout(() => {
+      // График по ключевым фразам
+      const keywordCtx = document.getElementById('keywordChart').getContext('2d');
+      new Chart(keywordCtx, {
+        type: 'bar',
+        data: {
+          labels: validData.map(item => new URL(item.url).hostname),
+          datasets: [
+            {
+              label: 'Точные вхождения',
+              data: validData.map(item => item.keywordStats.exactCount),
+              backgroundColor: 'rgba(67, 97, 238, 0.7)',
+              borderColor: 'rgba(67, 97, 238, 1)',
+              borderWidth: 1
+            },
+            {
+              label: 'Неточные вхождения',
+              data: validData.map(item => item.keywordStats.partialCount),
+              backgroundColor: 'rgba(114, 9, 183, 0.7)',
+              borderColor: 'rgba(114, 9, 183, 1)',
+              borderWidth: 1
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Количество вхождений'
+              }
+            },
+            x: {
+              title: {
+                display: true,
+                text: 'Сайты'
+              }
+            }
+          }
+        }
+      });
+      
+      // График по длине контента
+      const contentCtx = document.getElementById('contentChart').getContext('2d');
+      new Chart(contentCtx, {
+        type: 'bar',
+        data: {
+          labels: validData.map(item => new URL(item.url).hostname),
+          datasets: [{
+            label: 'Длина контента (символы)',
+            data: validData.map(item => item.contentAnalysis.length),
+            backgroundColor: 'rgba(76, 201, 240, 0.7)',
+            borderColor: 'rgba(76, 201, 240, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Количество символов'
+              }
+            },
+            x: {
+              title: {
+                display: true,
+                text: 'Сайты'
+              }
+            }
+          }
+        }
+      });
+    }, 100);
+    
+    return html;
+  }
+</script>
+  <footer class="footer">
+  <div class="container footer__container">
+    <div class="footer__col">
+      <div class="footer__logo">
+        <a href="/" class="logo">
+          <img src="/images/logo-footer.webp" alt="Веб-разработка и SEO сопровождение">
+          <span class="logo__description">Веб-разработка и SEO</span>
+        </a>
+      </div>
+      <div class="footer__copyright">
+        © 2025 Данильченко Роберт — Веб-разработка и SEO сопровождение
+      </div>
+    </div>
+    
+    <div class="footer__col">
+      <nav class="footer__nav">
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item">
+            <a href="#hero" class="footer__nav-link">Главная</a>
+          </li>
+          <li class="footer__nav-item">
+            <a href="#about" class="footer__nav-link">Обо мне</a>
+          </li>
+          <li class="footer__nav-item">
+            <a href="#services" class="footer__nav-link">Услуги</a>
+          </li>
+          <li class="footer__nav-item">
+            <a href="#portfolio" class="footer__nav-link">Портфолио</a>
+          </li>
+          <li class="footer__nav-item">
+            <a href="#contact" class="footer__nav-link">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    
+    <div class="footer__col">
+      <div class="footer__social">
+        
+          <a href="https://t.me/robDaNilov" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Telegram" itemprop="url">
+            <img class="social-link__icon" src="/images/telegram.webp" alt="telegram">
+          </a>
+        
+          <a href="https://wa.me/79607918623" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" itemprop="url">
+            <img class="social-link__icon" src="/images/whatsapp.webp" alt="whatsapp">
+          </a>
+        
+          <a href="https://teams.microsoft.com/l/chat/0/0?users=DanilovRob@ya.ru" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Microsoft Teams" itemprop="url">
+            <img class="social-link__icon" src="/images/microsoft.webp" alt="microsoft teams">
+          </a>
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="consultation-modal">
+  <div class="modal__content">
+    <button class="modal__close">&times;</button>
+    <h3 class="modal__title">Получить консультацию</h3>
+    <form class="form" id="consultation-form">
+      <input type="hidden" name="form_type" value="Консультация">
+      
+      <div class="form__group">
+        <input type="text" class="form__input" name="name" required placeholder=" ">
+        <label class="form__label">Ваше имя</label>
+      </div>
+      
+      <div class="form__group">
+        <input type="tel" class="form__input" name="phone" required placeholder=" ">
+        <label class="form__label">Телефон</label>
+      </div>
+      
+      <button type="submit" class="button button--primary">Отправить</button>
+    </form>
+  </div>
+</div>
+<div class="modal" id="callback-modal">
+  <div class="modal__content">
+    <button class="modal__close" aria-label="Закрыть модальное окно">&times;</button>
+    <h3 class="modal__title">Заказать звонок</h3>
+    <form class="form" id="callback-form" method="post">
+      <div class="form__group">
+        <input type="text" class="form__input" id="callback-name" name="name" required placeholder=" ">
+        <label for="callback-name" class="form__label">Ваше имя</label>
+      </div>
+      
+      <div class="form__group">
+        <input type="tel" class="form__input" id="callback-phone" name="phone" required placeholder=" ">
+        <label for="callback-phone" class="form__label">Телефон</label>
+      </div>
+      
+      <input type="hidden" name="form_type" value="callback">
+      <button type="submit" class="button button--primary form__button">Заказать звонок</button>
+    </form>
+  </div>
+</div>
+	<!-- Подключение скриптов -->
+	<script src="/js/main.js"></script>
+	<script src="/js/slider.js"></script>
+	<script src="/js/modal.js"></script>
+	<script src="/js/form.js"></script>
+	<script src="/js/send-telegram.js" defer></script>
+	<script>
+		window.addEventListener('load', function() {
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();
+			k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+			ym(102896834, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:false  // Вебвизор отключён
+			});
+		});
+	</script>
+	<noscript><div></div></noscript>
+</body>
+</html>
