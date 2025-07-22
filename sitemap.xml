@@ -2,15 +2,15 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://privseo.ru/category/backend/</loc>
-<lastmod>2025-07-22T11:44:50+07:00</lastmod>
+<lastmod>2025-07-22T23:14:58+07:00</lastmod>
 </url>
 <url>
 <loc>https://privseo.ru/category/frontend/</loc>
-<lastmod>2025-07-22T11:44:50+07:00</lastmod>
+<lastmod>2025-07-22T23:14:58+07:00</lastmod>
 </url>
 <url>
 <loc>https://privseo.ru/category/seo/</loc>
-<lastmod>2025-07-22T11:44:50+07:00</lastmod>
+<lastmod>2025-07-22T23:14:58+07:00</lastmod>
 </url>
 <url>
 <loc>https://privseo.ru/seo/2025/06/24/google-audio-overviews-teper-poisk-mozhno-slushat.html</loc>
@@ -54,6 +54,10 @@
 </url>
 <url>
 <loc>https://privseo.ru/frontend/2025/07/22/chto-takoe-dlina-stroki.html</loc>
+<lastmod>2025-07-22T00:00:00+07:00</lastmod>
+</url>
+<url>
+<loc>https://privseo.ru/backend/2025/07/22/wp-engine-predstavlyaet-revolyutsionnyy-ai-toolkit-dlya-wordpress.html</loc>
 <lastmod>2025-07-22T00:00:00+07:00</lastmod>
 </url>
 <url>
