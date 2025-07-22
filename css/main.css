@@ -84,6 +84,14 @@ img {
 ul {
 	list-style-position: inside;
 }
+pre {
+	border-radius: 10px;
+    background: #2d2d37;
+    color: #ada7a7;
+    padding: 10px;
+    border: 1px dashed #ada7a7;
+}
+
 /* Utility Classes */
 .container {
   width: 100%;
