@@ -2,15 +2,15 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://privseo.ru/category/backend/</loc>
-<lastmod>2025-07-22T23:14:58+07:00</lastmod>
+<lastmod>2025-07-24T11:29:41+07:00</lastmod>
 </url>
 <url>
 <loc>https://privseo.ru/category/frontend/</loc>
-<lastmod>2025-07-22T23:14:58+07:00</lastmod>
+<lastmod>2025-07-24T11:29:41+07:00</lastmod>
 </url>
 <url>
 <loc>https://privseo.ru/category/seo/</loc>
-<lastmod>2025-07-22T23:14:58+07:00</lastmod>
+<lastmod>2025-07-24T11:29:41+07:00</lastmod>
 </url>
 <url>
 <loc>https://privseo.ru/seo/2025/06/24/google-audio-overviews-teper-poisk-mozhno-slushat.html</loc>
@@ -61,6 +61,14 @@
 <lastmod>2025-07-22T00:00:00+07:00</lastmod>
 </url>
 <url>
+<loc>https://privseo.ru/seo/2025/07/24/besplatnye-instrumenty-seo-ot-google.html</loc>
+<lastmod>2025-07-24T00:00:00+07:00</lastmod>
+</url>
+<url>
+<loc>https://privseo.ru/frontend/2025/07/24/svoystvo-css-all-sbros-stiley-odnoy-strokoy.html</loc>
+<lastmod>2025-07-24T00:00:00+07:00</lastmod>
+</url>
+<url>
 <loc>https://privseo.ru/</loc>
 </url>
 <url>
@@ -77,6 +85,9 @@
 </url>
 <url>
 <loc>https://privseo.ru/news/page2/</loc>
+</url>
+<url>
+<loc>https://privseo.ru/news/page3/</loc>
 </url>
 <url>
 <loc>https://privseo.ru/seo-check.html</loc>
